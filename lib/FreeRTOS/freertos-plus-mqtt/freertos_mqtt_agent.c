@@ -92,7 +92,7 @@ typedef struct Command
     CommandType_t commandType;
     MQTTContext_t * pMqttContext;
     CommandCallback_t pCommandCompleteCallback;
-    CommandContext_t * pxCmdContext;
+    CommandContext_t * pCmdContext;
     IncomingPublishCallback_t pIncomingPublishCallback;
     void * pIncomingPublishCallbackContext;
     MqttOperationInfo_t mqttOperationInfo;
@@ -597,7 +597,7 @@ static AckInfo_t getAwaitingOperation( MQTTAgentContext_t * pAgentContext,
     AckInfo_t * pendingAcks = pAgentContext->pPendingAcks;
 
     /* Look through the array of packet IDs that are still waiting to be acked to
-     * find one with incomginPacketId. */
+     * find one with incomingPacketId. */
     for( i = 0; i < MQTT_AGENT_MAX_OUTSTANDING_ACKS; i++ )
     {
         if( pendingAcks[ i ].packetId == incomingPacketId )
@@ -819,7 +819,7 @@ static MQTTStatus_t createCommand( CommandType_t commandType,
         pCommand->pMqttContext = pMqttContext;
         pCommand->pIncomingPublishCallback = incomingPublishCallback;
         pCommand->pIncomingPublishCallbackContext = pIncomingPublishCallbackContext;
-        pCommand->pxCmdContext = pCommandCompleteCallbackContext;
+        pCommand->pCmdContext = pCommandCompleteCallbackContext;
         pCommand->pCommandCompleteCallback = commandCompleteCallback;
     }
 
@@ -989,7 +989,7 @@ static MQTTStatus_t processCommand( Command_t * pCommand,
             /* The command is complete, call the callback. */
             if( pCommand->pCommandCompleteCallback != NULL )
             {
-                pCommand->pCommandCompleteCallback( pCommand->pxCmdContext, operationStatus );
+                pCommand->pCommandCompleteCallback( pCommand->pCmdContext, operationStatus );
             }
 
             releaseCommandStructureToPool( pCommand );
@@ -1103,7 +1103,7 @@ static void handleSubscriptionAcks( MQTTAgentContext_t * pAgentContext,
 
     configASSERT( pAckInfo != NULL );
 
-    pAckContext = pAckInfo->pOriginalCommand->pxCmdContext;
+    pAckContext = pAckInfo->pOriginalCommand->pCmdContext;
     ackCallback = pAckInfo->pOriginalCommand->pCommandCompleteCallback;
     pSubscribeInfo = &( pAckInfo->pOriginalCommand->mqttOperationInfo.subscribeInfo );
     pSubackCodes = pPacketInfo->pRemainingData + 2U; /*_RB_ Where does 2 come from? */
@@ -1245,7 +1245,7 @@ static void mqttEventCallback( MQTTContext_t * pMqttContext,
 
                     if( ackCallback != NULL )
                     {
-                        ackCallback( ackInfo.pOriginalCommand->pxCmdContext,
+                        ackCallback( ackInfo.pOriginalCommand->pCmdContext,
                                      pDeserializedInfo->deserializationResult );
                     }
                 }
@@ -1571,7 +1571,7 @@ MQTTStatus_t MQTTAgent_ResumeSession( MQTTContextHandle_t mqttContextHandle,
                     if( pendingAcks[ i ].pOriginalCommand->pCommandCompleteCallback != NULL )
                     {
                         /* Bad response to indicate network error. */
-                        pendingAcks[ i ].pOriginalCommand->pCommandCompleteCallback( pendingAcks[ i ].pOriginalCommand->pxCmdContext, MQTTBadResponse );
+                        pendingAcks[ i ].pOriginalCommand->pCommandCompleteCallback( pendingAcks[ i ].pOriginalCommand->pCmdContext, MQTTBadResponse );
                     }
 
                     /* Now remove it from the list. */
@@ -1597,7 +1597,7 @@ MQTTStatus_t MQTTAgent_ResumeSession( MQTTContextHandle_t mqttContextHandle,
                     * maximum allowed by AWS IoT, and any QoS 0 publishes will still be QoS 0. */
                     pResendSubscription.qos = MQTTQoS1;
 
-                    /* We cannot add the commmand to the queue since the command loop
+                    /* We cannot add the command to the queue since the command loop
                      * should not be running during a reconnect. */
                     statusResult = createCommand( SUBSCRIBE, pMqttContext, &pResendSubscription, NULL, NULL, resubscribeCallback, NULL, &xResubscribeCommand );
 
