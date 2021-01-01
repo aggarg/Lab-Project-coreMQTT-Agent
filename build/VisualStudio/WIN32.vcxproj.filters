@@ -130,6 +130,12 @@
     <Filter Include="Lib\FreeRTOS\FreeRTOS-Kernel\portable\MSVC-MingW">
       <UniqueIdentifier>{46bb81fc-68bc-48a5-a8c6-d578ea8db98e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lib\AWS\Shadow">
+      <UniqueIdentifier>{3c418c75-6f94-4b2f-9899-55e68f30472c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib\AWS\Shadow\include">
+      <UniqueIdentifier>{a9cc3698-0a33-49f6-9260-f47923170a94}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\lib\FreeRTOS\freertos-kernel\event_groups.c">
@@ -290,6 +296,12 @@
     </ClCompile>
     <ClCompile Include="..\..\source\simple_sub_pub_demo.c">
       <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\shadow_demo.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\AWS\shadow\source\shadow.c">
+      <Filter>Lib\AWS\Shadow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -457,6 +469,15 @@
     </ClInclude>
     <ClInclude Include="..\..\lib\FreeRTOS\freertos-kernel\include\event_groups.h">
       <Filter>Lib\FreeRTOS\FreeRTOS-Kernel\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\AWS\shadow\source\include\shadow.h">
+      <Filter>Lib\AWS\Shadow\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\AWS\shadow\source\include\shadow_config_defaults.h">
+      <Filter>Lib\AWS\Shadow\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\configuration-files\shadow_config.h">
+      <Filter>Configuration Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

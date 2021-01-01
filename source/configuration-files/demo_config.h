@@ -77,8 +77,10 @@ extern void vLoggingPrintf( const char * pcFormatString,
 #define democonfigNUM_SIMPLE_SUB_PUB_TASKS_TO_CREATE    0
 #define democonfigSIMPLE_SUB_PUB_TASK_STACK_SIZE        ( configMINIMAL_STACK_SIZE )
 
-#define democonfigCREATE_CODE_SIGNING_OTA_DEMO          1
+#define democonfigCREATE_CODE_SIGNING_OTA_DEMO          0
 #define democonfigCODE_SIGNING_OTA_TASK_STACK_SIZE      ( configMINIMAL_STACK_SIZE )
+
+#define democonfigCREATE_SHADOW_DEMO                    1
 
 
 /**

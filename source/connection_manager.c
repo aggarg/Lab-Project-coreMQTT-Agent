@@ -107,6 +107,10 @@
     #error Please define democonfigCREATE_CODE_SIGNING_OTA_DEMO to 1 or 0 in demo_config.h - determines if vStartOTACodeSigningDemo() gets called or not.
 #endif
 
+#ifndef democonfigCREATE_SHADOW_DEMO
+    #error Please define democonfigCREATE_SHADOW_DEMO to 1 or 0 in demo_config.h - determines if vStartShadowDemo() gets called or not.
+#endif
+
 #if ( democonfigCREATE_CODE_SIGNING_OTA_DEMO != 0 ) && !defined( democonfigCODE_SIGNING_OTA_TASK_STACK_SIZE )
     #error Please define democonfigCODE_SIGNING_OTA_TASK_STACK_SIZE in demo_config.h to set the stack size (in words, not bytes) for the task created by vStartOTACodeSigningDemo().
 #endif
@@ -268,6 +272,7 @@ extern void vStartOTACodeSigningDemo( configSTACK_DEPTH_TYPE uxStackSize,
                                       UBaseType_t uxPriority );
 extern void vSuspendOTACodeSigningDemo( void );
 extern void vResumeOTACodeSigningDemo( void );
+extern void vStartShadowDemo( void );
 /*-----------------------------------------------------------*/
 
 /**
@@ -682,6 +687,12 @@ static void prvConnectAndCreateDemoTasks( void * pvParameters )
         {
             vStartOTACodeSigningDemo( democonfigCODE_SIGNING_OTA_TASK_STACK_SIZE,
                                       tskIDLE_PRIORITY + 1 );
+        }
+    #endif
+
+    #if ( democonfigCREATE_SHADOW_DEMO == 1 )
+        {
+            vStartShadowDemo();
         }
     #endif
 
