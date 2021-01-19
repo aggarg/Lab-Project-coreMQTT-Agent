@@ -214,6 +214,7 @@ int mbedtls_platform_mutex_unlock( mbedtls_threading_mutex_t * pMutex )
 
 /*-----------------------------------------------------------*/
 
+#ifdef WIN32
 /**
  * @brief Function to generate a random number.
  *
@@ -259,6 +260,39 @@ int mbedtls_platform_entropy_poll( void * data,
     return status;
 }
 
+#endif /* WIN32 */
+/*-----------------------------------------------------------*/
+
+#ifdef STM32H743xx
+
+#include "main.h"
+#include "string.h"
+#include "stm32h7xx_hal.h"
+
+extern RNG_HandleTypeDef hrng;
+
+int mbedtls_platform_entropy_poll( void *Data, unsigned char *Output, size_t Len, size_t *oLen )
+{
+    uint32_t index;
+    uint32_t randomValue;
+
+    for( index = 0; index < ( Len / 4 ); index++ )
+    {
+        if( HAL_RNG_GenerateRandomNumber( &( hrng ), &( randomValue ) ) == HAL_OK )
+        {
+            *oLen += 4;
+            memset( &( Output[ index * 4 ] ), ( int )randomValue, 4 );
+        }
+        else
+        {
+            Error_Handler();
+        }
+    }
+
+  return 0;
+}
+
+#endif /* STM32H743xx */
 /*-----------------------------------------------------------*/
 
 /**
