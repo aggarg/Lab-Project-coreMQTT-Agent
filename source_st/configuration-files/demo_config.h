@@ -92,7 +92,7 @@ extern void vLoggingPrintf( const char * pcFormatString,
  *!!! hard coded constant.
  *
  */
-#define democonfigCLIENT_IDENTIFIER              "mything"
+#define democonfigCLIENT_IDENTIFIER              "...insert here..."
 
 /**
  * @brief Endpoint of the MQTT broker to connect to.
@@ -108,7 +108,7 @@ extern void vLoggingPrintf( const char * pcFormatString,
  * AWS CLI command line tool).
  *
  */
-#define democonfigMQTT_BROKER_ENDPOINT           "a7v13rhxuo8xp-ats.iot.us-west-2.amazonaws.com"
+#define democonfigMQTT_BROKER_ENDPOINT           "...insert here..."
 
 /**
  * @brief The port to use for the demo.
@@ -145,34 +145,7 @@ extern void vLoggingPrintf( const char * pcFormatString,
  *
  * #define democonfigROOT_CA_PEM    "...insert here..."
  */
-#define democonfigROOT_CA_PEM  \
-"-----BEGIN CERTIFICATE-----\n" \
-"MIIEkjCCA3qgAwIBAgITBn+USionzfP6wq4rAfkI7rnExjANBgkqhkiG9w0BAQsF\n" \
-"ADCBmDELMAkGA1UEBhMCVVMxEDAOBgNVBAgTB0FyaXpvbmExEzARBgNVBAcTClNj\n" \
-"b3R0c2RhbGUxJTAjBgNVBAoTHFN0YXJmaWVsZCBUZWNobm9sb2dpZXMsIEluYy4x\n" \
-"OzA5BgNVBAMTMlN0YXJmaWVsZCBTZXJ2aWNlcyBSb290IENlcnRpZmljYXRlIEF1\n" \
-"dGhvcml0eSAtIEcyMB4XDTE1MDUyNTEyMDAwMFoXDTM3MTIzMTAxMDAwMFowOTEL\n" \
-"MAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv\n" \
-"b3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXj\n" \
-"ca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM\n" \
-"9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qw\n" \
-"IFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6\n" \
-"VOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L\n" \
-"93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQm\n" \
-"jgSubJrIqg0CAwEAAaOCATEwggEtMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/\n" \
-"BAQDAgGGMB0GA1UdDgQWBBSEGMyFNOy8DJSULghZnMeyEE4KCDAfBgNVHSMEGDAW\n" \
-"gBScXwDfqgHXMCs4iKK4bUqc8hGRgzB4BggrBgEFBQcBAQRsMGowLgYIKwYBBQUH\n" \
-"MAGGImh0dHA6Ly9vY3NwLnJvb3RnMi5hbWF6b250cnVzdC5jb20wOAYIKwYBBQUH\n" \
-"MAKGLGh0dHA6Ly9jcnQucm9vdGcyLmFtYXpvbnRydXN0LmNvbS9yb290ZzIuY2Vy\n" \
-"MD0GA1UdHwQ2MDQwMqAwoC6GLGh0dHA6Ly9jcmwucm9vdGcyLmFtYXpvbnRydXN0\n" \
-"LmNvbS9yb290ZzIuY3JsMBEGA1UdIAQKMAgwBgYEVR0gADANBgkqhkiG9w0BAQsF\n" \
-"AAOCAQEAYjdCXLwQtT6LLOkMm2xF4gcAevnFWAu5CIw+7bMlPLVvUOTNNWqnkzSW\n" \
-"MiGpSESrnO09tKpzbeR/FoCJbM8oAxiDR3mjEH4wW6w7sGDgd9QIpuEdfF7Au/ma\n" \
-"eyKdpwAJfqxGF4PcnCZXmTA5YpaP7dreqsXMGz7KQ2hsVxa81Q4gLv7/wmpdLqBK\n" \
-"bRRYh5TmOTFffHPLkIhqhBGWJ6bt2YFGpn6jcgAKUj6DiAdjd4lpFw85hdKrCEVN\n" \
-"0FE6/V1dN2RMfjCyVSRCnTawXZwXgWHxyvkQAiSr6w10kY17RSlQOYiypok1JR4U\n" \
-"akcjMS9cmvqtmg5iUaQqqcT5NJ0hGA==\n" \
-"-----END CERTIFICATE-----\n"
+#define democonfigROOT_CA_PEM    "...insert here..."
 
 /**
  * @brief Client certificate.
@@ -190,27 +163,7 @@ extern void vLoggingPrintf( const char * pcFormatString,
  *
  * #define democonfigCLIENT_CERTIFICATE_PEM    "...insert here..."
  */
-#define democonfigCLIENT_CERTIFICATE_PEM  \
-"-----BEGIN CERTIFICATE-----\n" \
-"MIIDWjCCAkKgAwIBAgIVAJkpmdCVD4bwxiDVpcrNPSw+CU/iMA0GCSqGSIb3DQEB\n" \
-"CwUAME0xSzBJBgNVBAsMQkFtYXpvbiBXZWIgU2VydmljZXMgTz1BbWF6b24uY29t\n" \
-"IEluYy4gTD1TZWF0dGxlIFNUPVdhc2hpbmd0b24gQz1VUzAeFw0xODEwMjMxODQx\n" \
-"MDdaFw00OTEyMzEyMzU5NTlaMB4xHDAaBgNVBAMME0FXUyBJb1QgQ2VydGlmaWNh\n" \
-"dGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDhEV8ahgoz2VNYOYSV\n" \
-"+ZQHANURBwsYjG4xJhIgitHfHUl09qNb6AG0xSRyo3G/GLr8IMNzm/009mhYQOwX\n" \
-"cxhhxd9j9VJ688+dz0JHuDzAvdG540lqc8ev2lSFt2Cb+F+m/6wzW6462jHzEiuF\n" \
-"Qj1SERE3Ns8mhZ7nsp25VpURfbChOIUNxP7grjpWPhDLjLy3c/9neimzzW7FOrIu\n" \
-"ut1rSccrd8f1fba13qEqltvItiEmjhEQZG197tKYN0w0EfTgSxobnY81JFhWkaEZ\n" \
-"XflBaSR/bH/hO0mOHdxlma9aOFn6aXbnpsdVQqvYBzd6nIY3eALpWuMci7p8XgBl\n" \
-"5oK1AgMBAAGjYDBeMB8GA1UdIwQYMBaAFNS0nLTLk1rZss67ko59dR6hUoH7MB0G\n" \
-"A1UdDgQWBBSWvFncF9AHeszHnVjQzsWEboNnZTAMBgNVHRMBAf8EAjAAMA4GA1Ud\n" \
-"DwEB/wQEAwIHgDANBgkqhkiG9w0BAQsFAAOCAQEAjHDEp15NyxWBMkX3JqJJfMMz\n" \
-"a0kFq2ijPBcXAiTjvcR8mS9CNRk2iUvjRShY5GV+bZZ9uY4QitAbX/MK0t3Y9zeI\n" \
-"/zozKZTe1itbu8tfbiDEq5HAcEhH0cdeq53RODg3hWu++P+wlZ8lx9ANDIAIIZsS\n" \
-"/V1NpYY/K9B9b/Dd4wQFR2pv2ScQTtfpTdIUrbKK/cPPbQRzIHps3iNS3fovHYEA\n" \
-"WEmXxM+MugfYrMl4GXNH/hWwHigRhn3DHBT2uyr9NGrShfgsnafbdQ4iYC1D5Gy2\n" \
-"PVpqCt2xo0GcG7kRtmELw1wdMFc4jIfSYdUBp71Dc8B5sokLGF4rBV69u54r1g==\n" \
-"-----END CERTIFICATE-----\n"
+#define democonfigCLIENT_CERTIFICATE_PEM    "...insert here..."
 
 /**
  * @brief Client's private key.
@@ -236,35 +189,7 @@ extern void vLoggingPrintf( const char * pcFormatString,
  *
  * #define democonfigCLIENT_PRIVATE_KEY_PEM    "...insert here..."
  */
-#define democonfigCLIENT_PRIVATE_KEY_PEM  \
-"-----BEGIN RSA PRIVATE KEY-----\n" \
-"MIIEpAIBAAKCAQEA4RFfGoYKM9lTWDmElfmUBwDVEQcLGIxuMSYSIIrR3x1JdPaj\n" \
-"W+gBtMUkcqNxvxi6/CDDc5v9NPZoWEDsF3MYYcXfY/VSevPPnc9CR7g8wL3RueNJ\n" \
-"anPHr9pUhbdgm/hfpv+sM1uuOtox8xIrhUI9UhERNzbPJoWe57KduVaVEX2woTiF\n" \
-"DcT+4K46Vj4Qy4y8t3P/Z3ops81uxTqyLrrda0nHK3fH9X22td6hKpbbyLYhJo4R\n" \
-"EGRtfe7SmDdMNBH04EsaG52PNSRYVpGhGV35QWkkf2x/4TtJjh3cZZmvWjhZ+ml2\n" \
-"56bHVUKr2Ac3epyGN3gC6VrjHIu6fF4AZeaCtQIDAQABAoIBAA0JSIzsvqKKL/2o\n" \
-"NznInv5Y2f6GfeoKGEfYgKxJ3iYiOCMCNiwYoCCsWpQZS3laIVqBO1Dy9BOhQiH6\n" \
-"gLJLBFqFb48GoqRkgt4NJzWoQjyXwhIWTCZSVnqlFsg3+uyN0lyF6p9+6/SUttfx\n" \
-"cXviflLGkky0bAM7Mh0Rh3k4vqGonkVOfukyg3rn1zZG5sXwVQ1IacxNhKjJnbq3\n" \
-"A1smQscCk6sRXCXkFaSrc7VVhaZ/vQiVFHqBkaJaHCg87Y9lLyORpl0dIihr1Oy/\n" \
-"mVQc4q1Lj3TLK8FBb9MKNOp8XMdR+xBYH7YBwvIBQnj00xawQvnhK3ejTP9Jcxpv\n" \
-"AQeZHXECgYEA9pl3RLRINyZb7NW1HQPksqrnAPDZUwJo1lByy3AkabtLe36UL6aK\n" \
-"/C+LuS7AByjq9qNtM6sCuBehhSrzJ7P+Ehdr2yWEYdb1DWiV6EgO0T0N4PE93Ku4\n" \
-"WhIIT4OV1O8scMSR1RPyG3807/nH1LzXiqPSDRf/3ZWi2VXVeetL08sCgYEA6aXH\n" \
-"+wrkUkmbzcOP5SgFLHgV0rbgb8KBBSVsC0kiU4AnqFxukrGp7OsjrFB1yUr+/bX4\n" \
-"VGMV5bEKxdmitMyA94FVRPq32AUH0TrUMn9sXyuXGXMHfFXNUNXGyLjs+TEh3s2A\n" \
-"OhiqFiLrtlLUjwOuNfhCDx7b7EPYQ1mlJ+NlM38CgYADHZVALPbsm3N13o1XPIFb\n" \
-"MIWSoXhdcB5a9tE8eMI9A7zEZqkAoR4IaaFeSZTrgjzVuOLcUEDMip/jytMfoUqI\n" \
-"d/tI3YR6p/iYnsWmFaL6SccvHF0nuJOvr6KjPopaEluBYTpmcsYQSt8kWQeJTIl8\n" \
-"mu1AdRkqd4WDMW5tB+gBWQKBgQDlHcZvLQ0cjEYWjrEqnAYGx3NPADoyHd/7Nekv\n" \
-"X/YjP8aj2JAtlb72Ltb6gKQgUkSecrUju06bwPK5dWOSPAAztUXysJFbagNyb2fq\n" \
-"ZP3WjZ5MPHqYuGLv49JcvsrSyhVWsNoPHmSb9H6EedEqtQc+sUXGIhKzKwyFbwD/\n" \
-"joOM7QKBgQCYTHZF0sjm9ZtQWnx8HtiGxoyGBMpmaEVlSuXLbQk9DUKM/jBSrWA0\n" \
-"zT9g6f7gMEcgC90t/EQztcCsVD0AUXycGlYB9yHJ2mD996aYRokArVTUO6Nkyzn1\n" \
-"CQmB8GVaoYw0ykmamUUf6PC83dCZxr3UibDbXkK51pc/a9PhOFlreA==\n" \
-"-----END RSA PRIVATE KEY-----\n"
-
+#define democonfigCLIENT_PRIVATE_KEY_PEM    "...insert here..."
 
 /**
  * @brief An option to disable Server Name Indication.
